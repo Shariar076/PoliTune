@@ -47,6 +47,12 @@ If you use this codebase or the datasets in your work, please cite our paper:
 ```
 
 ## License
-This repository contains code under two licenses:
-- Original code written by SCALE Lab is licensed under the MIT License (see [LICENSE](LICENSE)).
-- Files derived from Meta Platforms’ code are licensed under the BSD-3-Clause License (see [LICENSE-BSD](LICENSE-BSD)).
+MIT License. See [LICENSE](LICENSE) file
+
+
+
+tune cp llama3_1/8B_lora_dpo_single_device custom_config_dpo.yaml
+
+tune cp llama2/7B_lora_dpo_single_device custom_config_dpo.yaml
+tune cp eleuther_evaluation ./custom_eval_config.yaml
+tune cp generation ./custom_generation_config.yaml
