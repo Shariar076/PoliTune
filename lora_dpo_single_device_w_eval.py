@@ -597,7 +597,7 @@ class LoRADPORecipeSingleDevice(FTRecipeInterface):
                     log.info(
                         f"Saving checkpoint at {curr_epoch}_{str(idx).zfill(4)}")
                     self.save_checkpoint(
-                        step=f"{curr_epoch}_{str(idx).zfill(4)}")
+                        epoch=f"{curr_epoch}_{str(idx).zfill(4)}")
                     sys.stdout.flush()
                 ############################# </EVAL> #############################
                 
