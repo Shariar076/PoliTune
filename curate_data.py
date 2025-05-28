@@ -1,5 +1,5 @@
 import json
-
+from tqdm import tqdm
 
 '''
 [
@@ -23,24 +23,25 @@ import json
 '''
 
 def create_json():
-    from dataset import load_dataset
-    ds = load_dataset("scale-lab/politune-left", split = "train")
-
+    # from dataset import load_dataset
+    # ds = load_dataset("scale-lab/politune-left", split = "train")
+    ds = json.load(open('data/allsides-left-prefdata-or-smth.json', 'r'))
     data = []
-    for example in ds:
+    for example in tqdm(ds):
         # example['prompt'], example['chosen'], example['rejected']
         data.append({
             'chosen':[
-                { "content": example['prompt'], "role": "user" },
+                { "content": example['instruction'], "role": "user" },
                 { "content": example['chosen'], "role": "assistant" }
             ],
             'rejected':[
-                { "content": example['prompt'], "role": "user" },
+                { "content": example['instruction'], "role": "user" },
                 { "content": example['rejected'], "role": "assistant" }
             ],
         })
 
-    json.dump(data, open('politune-left.json', 'w'))
+    # json.dump(data, open('politune-left.json', 'w'))
+    json.dump(data, open('data/politune-left.json', 'w'))
 
 def mix_data():
     '''
@@ -76,4 +77,5 @@ def mix_data():
     json.dump(mix_25r75l, open('data/allsides-25r75l.json', 'w'))
     json.dump(mix_50r50l, open('data/allsides-50r50l.json', 'w'))
 
+# create_json()
 mix_data()

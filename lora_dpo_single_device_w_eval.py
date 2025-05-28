@@ -594,11 +594,11 @@ class LoRADPORecipeSingleDevice(FTRecipeInterface):
                     # Print the first training input decoded
                     self.eval_custom_prompts(iteration=curr_epoch, step=idx)
                     self.eval_pc(iteration=curr_epoch, step=idx)
-                    log.info(
-                        f"Saving checkpoint at {curr_epoch}_{str(idx).zfill(4)}")
-                    self.save_checkpoint(
-                        epoch=f"{curr_epoch}_{str(idx).zfill(4)}")
-                    sys.stdout.flush()
+                    # log.info(
+                    #     f"Saving checkpoint at {curr_epoch}_{str(idx).zfill(4)}")
+                    # self.save_checkpoint(
+                    #     epoch=f"{curr_epoch}_{str(idx).zfill(4)}")
+                    # sys.stdout.flush()
                 ############################# </EVAL> #############################
                 
                 # batch is input_ids, labels
