@@ -3,7 +3,8 @@
 
 
 import torch
-from torchtune import utils
+from torchtune.generation import generate
+from torchtune.models.llama3 import llama3_tokenizer
 import csv
 import re
 
@@ -87,12 +88,15 @@ import re
 #             )
 #         return prompt
 
+
+tokenizer = llama3_tokenizer("checkpoints/Llama-3.1-8B-Instruct/original/tokenizer.model")
 def convert_instruction_to_llama3(instruction, user_msg):
     return f"""<|begin_of_text|><|start_header_id|>system<|end_header_id|>
 
 You are a helpful, respectful, and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>
 
-{instruction}\n\n{user_msg}<|eot_id|><|start_header_id|>assistant<|end_header_id|>"""
+{instruction}
+{user_msg}<|eot_id|><|start_header_id|>assistant<|end_header_id|>"""
 
 
 pc_instruction = """Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
@@ -124,6 +128,7 @@ custom_prompts = [
 
 
 def clean_output(output, split='<|eot_id|>'):
+    print("RAW output:", output)
     if split:
         while output.startswith(split):
             output = output[len(split):]
@@ -134,19 +139,17 @@ def clean_output(output, split='<|eot_id|>'):
     return output.split(split)[0].strip()
 
 
-def eval_instrs(model, tokenizer, causal_mask, kv_cache, max_generated_tokens, temperature, top_k, instrs, split='<|eot_id|>'):
+
+def eval_instrs(model, tokenizer, max_generated_tokens, temperature, top_k, instrs, split='<|eot_id|>'):
     current_training = model.training
     model.eval()
-    model.causal_mask = causal_mask
-    for i, layer in enumerate(model.layers):
-        layer.attn.kv_cache = kv_cache[i]
-        kv_cache[i].reset()
     answers = []
     with torch.no_grad():
         for prompt in instrs:
-            outputs = utils.generate(
+            emb = tokenizer.encode(prompt)
+            outputs, logits = generate(
                 model=model,
-                prompt=prompt,
+                prompt=torch.tensor(emb, device='cuda'),
                 max_generated_tokens=max_generated_tokens,
                 temperature=temperature,
                 top_k=top_k,
@@ -155,20 +158,17 @@ def eval_instrs(model, tokenizer, causal_mask, kv_cache, max_generated_tokens, t
                 custom_generate_next_token=None,
             )
             output_decoded = clean_output(
-                tokenizer.decode(outputs[0][len(prompt):]))
+                tokenizer.decode(outputs[0][len(emb):].tolist()))
+            print(">>>>>>> output_decoded:", output_decoded)
             answers.append(output_decoded)
-    for layer in model.layers:
-        layer.attn.kv_cache = None
-    model.causal_mask = None
     model.train(current_training)
     return answers
 
 
-def eval_pc(pc_questions, pc_csv_file, log, model, tokenizer, causal_mask, kv_cache, max_generated_tokens, temperature, top_k, iteration=0, step=0, split='<|eot_id|>'):
+def eval_pc(pc_questions, pc_csv_file, log, model, tokenizer, max_generated_tokens, temperature, top_k, iteration=0, step=0, split='<|eot_id|>'):
     log.info(
         f"Evaluating politcal compass: iteration {iteration}, step {step}")
-    answers = eval_instrs(model=model, tokenizer=tokenizer, causal_mask=causal_mask, kv_cache=kv_cache,
-                          max_generated_tokens=max_generated_tokens, temperature=temperature, top_k=top_k, instrs=pc_questions, split=split)
+    answers = eval_instrs(model=model, tokenizer=tokenizer, max_generated_tokens=max_generated_tokens, temperature=temperature, top_k=top_k, instrs=pc_questions, split=split)
     with open(pc_csv_file, 'a', newline='') as f:
         writer = csv.writer(f)
         writer.writerow([iteration, step] + answers)
@@ -176,10 +176,9 @@ def eval_pc(pc_questions, pc_csv_file, log, model, tokenizer, causal_mask, kv_ca
     log.info(f"Updated {pc_csv_file}")
 
 
-def eval_custom_prompts(custom_prompts, custom_prompts_file, log, model, tokenizer, causal_mask, kv_cache, max_generated_tokens, temperature, top_k, iteration=0, step=0, split='<|eot_id|>'):
+def eval_custom_prompts(custom_prompts, custom_prompts_file, log, model, tokenizer, max_generated_tokens, temperature, top_k, iteration=0, step=0, split='<|eot_id|>'):
     log.info(f"Evaluating custom prompts: iteration {iteration}, step {step}")
-    answers = eval_instrs(model=model, tokenizer=tokenizer, causal_mask=causal_mask, kv_cache=kv_cache,
-                          max_generated_tokens=max_generated_tokens, temperature=temperature, top_k=top_k, instrs=custom_prompts, split=split)
+    answers = eval_instrs(model=model, tokenizer=tokenizer, max_generated_tokens=max_generated_tokens, temperature=temperature, top_k=top_k, instrs=custom_prompts, split=split)
     with open(custom_prompts_file, 'a', newline='') as f:
         writer = csv.writer(f)
         writer.writerow([iteration, step] + answers)
@@ -191,3 +190,56 @@ def eval_custom_prompts(custom_prompts, custom_prompts_file, log, model, tokeniz
 # template = AlpacaInstructTemplate()
 # fmt_inst = format_instruction(template, "A good instruction", "silly user msg")
 # print(fmt_inst)
+
+
+'''
+import torch                                                                              
+from torchtune.models.llama3 import llama3_tokenizer                                      
+from torchtune.models.llama3 import llama3_8b                                         
+from torchtune.generation import generate
+
+from safetensors.torch import load_file       
+state_dict = {}
+for i in range(1, 5):  # assuming files are numbered 1-4
+    shard = load_file(f"checkpoints/Meta-Llama-3-8B-Instruct/model-0000{i}-of-00004.safetensors")
+    state_dict.update(shard)
+
+# state_dict = torch.load('checkpoints/Meta-Llama-3-8B-Instruct/original/consolidated.00.pth', mmap=True, weights_only=True, map_location='cuda')
+
+model = llama3_8b()
+model.load_state_dict(state_dict)
+model = model.cuda()
+model.eval()                                                        
+tokenizer = llama3_tokenizer("checkpoints/Meta-Llama-3-8B-Instruct/original/tokenizer.model")
+prompt = tokenizer.encode("Hi my name is")                                                
+output, logits = generate(model, torch.tensor(prompt, device='cuda'), max_generated_tokens=100, pad_id=0)
+print(tokenizer.decode(output[0].tolist()))
+>>> model                                                                           
+TransformerDecoder(                                                                 
+  (tok_embeddings): Embedding(128256, 4096)                                         
+  (layers): ModuleList(                                                             
+    (0-31): 32 x TransformerSelfAttentionLayer(                                     
+      (attn): MultiHeadAttention(                                                   
+        (q_proj): Linear(in_features=4096, out_features=4096, bias=False)           
+        (k_proj): Linear(in_features=4096, out_features=1024, bias=False)           
+        (v_proj): Linear(in_features=4096, out_features=1024, bias=False)           
+        (output_proj): Linear(in_features=4096, out_features=4096, bias=False)      
+        (pos_embeddings): Llama3ScaledRoPE()                                        
+      )                                                                             
+      (mlp): FeedForward(                                                           
+        (w1): Linear(in_features=4096, out_features=14336, bias=False)              
+        (w2): Linear(in_features=14336, out_features=4096, bias=False)              
+        (w3): Linear(in_features=4096, out_features=14336, bias=False)              
+        (activation): SiLU()                                                        
+      )                                                                             
+      (sa_norm): RMSNorm()                                                          
+      (mlp_norm): RMSNorm()                                                         
+      (sa_scale): Identity()                                                        
+      (mlp_scale): Identity()                                                       
+    )                                                                               
+  )                                                                                 
+  (norm): RMSNorm()                                                                 
+  (output): Linear(in_features=4096, out_features=128256, bias=False)               
+)                                                                                   
+
+'''

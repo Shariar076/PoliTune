@@ -19,7 +19,7 @@ def politune_right_pref(
     return preference_dataset(
         tokenizer=tokenizer,
         source=source,
-        data_files="data/allsides-right.json",
+        data_files="data/politune-right.json",
         train_on_input=train_on_input,
         column_map={
             "chosen": "chosen",

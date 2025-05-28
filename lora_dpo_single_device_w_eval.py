@@ -21,7 +21,7 @@ from torch import nn
 from torch.optim import Optimizer
 from torch.utils.data import DataLoader, DistributedSampler
 from torchtune import config, modules, rlhf, training, utils
-from torchtune.data import CROSS_ENTROPY_IGNORE_IDX, padded_collate_dpo
+from torchtune.data import CROSS_ENTROPY_IGNORE_IDX, padded_collate_dpo, Message
 from torchtune.datasets import ConcatDataset
 from torchtune.modules.peft import (
     disable_adapter,
@@ -182,7 +182,9 @@ class LoRADPORecipeSingleDevice(FTRecipeInterface):
 
     def format_instruction(self, instr, inp=""):
         # return format_instruction(self._template, instr, inp)
-        return convert_instruction_to_llama3(self, instr, inp)
+        return convert_instruction_to_llama3(instr, inp)
+        # return [Message(role="user", content=instr), 
+        #         Message(role="user", content=inp)]
 
     def generate_pc_instruction(self, question):
         return self.format_instruction(self._pc_instruction, question)
@@ -459,10 +461,10 @@ class LoRADPORecipeSingleDevice(FTRecipeInterface):
     
     ############################# <EVAL> #############################
     def eval_pc(self, iteration=0, step=0):
-        return eval_pc(pc_questions=self._pc_questions, pc_csv_file=self._pc_csv_file, log=log, model=self._model, tokenizer=self._tokenizer, causal_mask=self._causal_mask, kv_cache=self._kv_cache, max_generated_tokens=self._max_generated_tokens, temperature=self._temperature, top_k=self._top_k, iteration=iteration, step=step)
+        return eval_pc(pc_questions=self._pc_questions, pc_csv_file=self._pc_csv_file, log=log, model=self._model, tokenizer=self._tokenizer, max_generated_tokens=self._max_generated_tokens, temperature=self._temperature, top_k=self._top_k, iteration=iteration, step=step)
 
     def eval_custom_prompts(self, iteration=0, step=0):
-        return eval_custom_prompts(custom_prompts=self._custom_prompts, custom_prompts_file=self._custom_prompts_file, log=log, model=self._model, tokenizer=self._tokenizer, causal_mask=self._causal_mask, kv_cache=self._kv_cache, max_generated_tokens=self._max_generated_tokens, temperature=self._temperature, top_k=self._top_k, iteration=iteration, step=step)
+        return eval_custom_prompts(custom_prompts=self._custom_prompts, custom_prompts_file=self._custom_prompts_file, log=log, model=self._model, tokenizer=self._tokenizer, max_generated_tokens=self._max_generated_tokens, temperature=self._temperature, top_k=self._top_k, iteration=iteration, step=step)
     ############################# </EVAL> #############################
 
     def save_checkpoint(self, epoch: int) -> None:
