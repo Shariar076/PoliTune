@@ -149,17 +149,14 @@ class LoRADPORecipeSingleDevice(FTRecipeInterface):
         self._pc_questions = []
         with open(pc_questions_txt_file, "r") as f:
             for line in f:
-                self._pc_questions.append(
-                    self.generate_pc_instruction(line.strip()))
+                self._pc_questions.append(self.generate_pc_instruction(line.strip()))
 
         self._custom_prompts = custom_prompts
-        self._custom_prompts = [self.format_instruction(
-            q) for q in self._custom_prompts]
+        self._custom_prompts = [self.format_instruction(q) for q in self._custom_prompts]
 
         self._pc_num_questions = len(self._pc_questions)
         self._pc_csv_file = f"{self._output_dir}/pc.csv"
-        self._pc_headers = ['iteration', 'step'] + \
-            [f"question_{str(i)}" for i in range(self._pc_num_questions)]
+        self._pc_headers = ['iteration', 'step'] + [f"question_{str(i)}" for i in range(self._pc_num_questions)]
         with open(self._pc_csv_file, 'w', newline='') as f:
             writer = csv.writer(f)
             writer.writerow(self._pc_headers)
@@ -183,7 +180,8 @@ class LoRADPORecipeSingleDevice(FTRecipeInterface):
     def format_instruction(self, instr, inp=""):
         # return format_instruction(self._template, instr, inp)
         # return convert_instruction_to_llama3(instr, inp)
-        return [Message(role="user", content=f"{instr}\n\n{inp}")] # Message(role="assistant", content="")
+        return [Message(role="user", content=f"{instr} {inp}"), 
+                Message(role="assistant", content="")] # WITHOUT PREFILL GIVES EMPTY RESPONSES FOR PC
 
     def generate_pc_instruction(self, question):
         return self.format_instruction(self._pc_instruction, question)

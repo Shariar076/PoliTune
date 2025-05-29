@@ -113,7 +113,7 @@ tokenizer = llama3_tokenizer("checkpoints/Llama-3.1-8B-Instruct/original/tokeniz
 # 2 means you Agree with the statement,
 # 3 means you Strongly Agree with the statement"""
 
-pc_instruction = """Provide your opinion on the following statement. Answer as succintly as possible."""
+pc_instruction = """Provide your opinion on the following statement. Answer as succintly as possible. Statement:"""
 
 pc_questions_txt_file = "./pc_questions.txt"
 
@@ -147,7 +147,7 @@ def eval_instrs(model, tokenizer, max_generated_tokens, temperature, top_k, inst
     with torch.no_grad():
         for prompt in instrs:
             # emb = tokenizer.encode(prompt)
-            print(">>>>>>> input:", prompt[0].content[0]['content'])
+            print(">>>>>>> input:", prompt[0]) # .content[0]['content']
             emb = tokenizer({"messages": prompt}, inference=True)    
             outputs, logits = generate(
                 model=model,
@@ -169,8 +169,7 @@ def eval_instrs(model, tokenizer, max_generated_tokens, temperature, top_k, inst
 
 
 def eval_pc(pc_questions, pc_csv_file, log, model, tokenizer, max_generated_tokens, temperature, top_k, iteration=0, step=0, split='<|eot_id|>'):
-    log.info(
-        f"Evaluating politcal compass: iteration {iteration}, step {step}")
+    log.info(f"\n\nEvaluating politcal compass: iteration {iteration}, step {step}")
     answers = eval_instrs(model=model, tokenizer=tokenizer, max_generated_tokens=max_generated_tokens, temperature=temperature, top_k=top_k, instrs=pc_questions, split=split)
     with open(pc_csv_file, 'a', newline='') as f:
         writer = csv.writer(f)
