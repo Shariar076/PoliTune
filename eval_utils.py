@@ -147,7 +147,7 @@ def eval_instrs(model, tokenizer, max_generated_tokens, temperature, top_k, inst
     with torch.no_grad():
         for prompt in instrs:
             # emb = tokenizer.encode(prompt)
-            print(">>>>>>> input:", prompt[0]) # .content[0]['content']
+            print(">>>>>>> input:", prompt[0].content[0]['content'])
             emb = tokenizer({"messages": prompt}, inference=True)    
             outputs, logits = generate(
                 model=model,
