@@ -9,26 +9,26 @@
 
 
 echo ">>>>>>>>>> RUNNING FT FOR 100R0L <<<<<<<<<<"
-tune run lora_dpo_single_device --config llama3_1_8B_lora_dpo_single_device.yaml checkpointer.output_dir=checkpoints/ output_dir=outputs dataset._component_=dataset.politune_right_pref
+tune run lora_dpo_single_device_w_eval.py --config llama3_1_8B_lora_dpo_single_device.yaml checkpointer.output_dir=checkpoints/ output_dir=outputs dataset._component_=dataset.politune_right_pref
 huggingface-cli upload shariar076/Llama-3.1-8B-DPO-100R0L checkpoints/epoch_3
 # rm -rf checkpoints/epoch_*
 
 # echo ">>>>>>>>>> RUNNING FT FOR 75R25L <<<<<<<<<<"
-# tune run lora_dpo_single_device --config llama3_1_8B_lora_dpo_single_device.yaml checkpointer.output_dir=checkpoints/ output_dir=outputs dataset._component_=dataset.politune_75r25l_pref
+# tune run lora_dpo_single_device_w_eval.py --config llama3_1_8B_lora_dpo_single_device.yaml checkpointer.output_dir=checkpoints/ output_dir=outputs dataset._component_=dataset.politune_75r25l_pref
 # huggingface-cli upload shariar076/Llama-3.1-8B-DPO-75R25L checkpoints/epoch_3
 # rm -rf checkpoints/epoch_*
 
 # echo ">>>>>>>>>> RUNNING FT FOR 50R50L <<<<<<<<<<"
-# tune run lora_dpo_single_device --config llama3_1_8B_lora_dpo_single_device.yaml checkpointer.output_dir=checkpoints/ output_dir=outputs dataset._component_=dataset.politune_50r50l_pref
+# tune run lora_dpo_single_device_w_eval.py --config llama3_1_8B_lora_dpo_single_device.yaml checkpointer.output_dir=checkpoints/ output_dir=outputs dataset._component_=dataset.politune_50r50l_pref
 # huggingface-cli upload shariar076/Llama-3.1-8B-DPO-50R50L checkpoints/epoch_3
 # rm -rf checkpoints/epoch_*
 
 # echo ">>>>>>>>>> RUNNING FT FOR 25R75L <<<<<<<<<<"
-# tune run lora_dpo_single_device --config llama3_1_8B_lora_dpo_single_device.yaml checkpointer.output_dir=checkpoints/ output_dir=outputs dataset._component_=dataset.politune_25r75l_pref
+# tune run lora_dpo_single_device_w_eval.py --config llama3_1_8B_lora_dpo_single_device.yaml checkpointer.output_dir=checkpoints/ output_dir=outputs dataset._component_=dataset.politune_25r75l_pref
 # huggingface-cli upload shariar076/Llama-3.1-8B-DPO-25R75L checkpoints/epoch_3
 # rm -rf checkpoints/epoch_*
 
 # echo ">>>>>>>>>> RUNNING FT FOR 0R100L <<<<<<<<<<"
-# tune run lora_dpo_single_device --config llama3_1_8B_lora_dpo_single_device.yaml checkpointer.output_dir=checkpoints/ output_dir=outputs dataset._component_=dataset.politune_left_pref
+# tune run lora_dpo_single_device_w_eval.py --config llama3_1_8B_lora_dpo_single_device.yaml checkpointer.output_dir=checkpoints/ output_dir=outputs dataset._component_=dataset.politune_left_pref
 # huggingface-cli upload shariar076/Llama-3.1-8B-DPO-0R100L checkpoints/epoch_3
 # rm -rf checkpoints/epoch_*

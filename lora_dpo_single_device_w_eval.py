@@ -5,7 +5,7 @@
 # LICENSE file in the root directory of this source tree.
 
 import csv
-from eval_utils import pc_instruction, pc_questions_txt_file, custom_prompts, convert_instruction_to_llama3, eval_pc, eval_custom_prompts
+from eval_utils import pc_instruction, pc_questions_txt_file, custom_prompts, eval_pc, eval_custom_prompts
 
 import sys
 import time
@@ -182,9 +182,8 @@ class LoRADPORecipeSingleDevice(FTRecipeInterface):
 
     def format_instruction(self, instr, inp=""):
         # return format_instruction(self._template, instr, inp)
-        return convert_instruction_to_llama3(instr, inp)
-        # return [Message(role="user", content=instr), 
-        #         Message(role="user", content=inp)]
+        # return convert_instruction_to_llama3(instr, inp)
+        return [Message(role="user", content=f"{instr}\n\n{inp}")] # Message(role="assistant", content="")
 
     def generate_pc_instruction(self, question):
         return self.format_instruction(self._pc_instruction, question)

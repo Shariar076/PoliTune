@@ -60,7 +60,11 @@ tokenizer:
   path: checkpoints/Llama-3.1-8B-Instruct/original/tokenizer.model
 
 Hint: enable_activation_checkpointing is True, but enable_activation_offloading isn't. Enabling activation offloading should reduce memory further.
-Setting manual seed to local seed 321204752. Local seed is seed + rank = 321204752 + 0
+Setting manual seed to local seed 3008480576. Local seed is seed + rank = 3008480576 + 0
+Evaluation frequency: 512
+Max generated tokens: 300
+Temperature: 0.3
+Top k: 200
 Model is initialized with precision torch.bfloat16.
 Memory stats after model init:
 	GPU peak memory allocation: 15.09 GiB
@@ -69,7 +73,1133 @@ Memory stats after model init:
 Tokenizer is initialized from file.
 Optimizer and loss are initialized.
 Loss function is initialized.
-Writing logs to outputs/logs/log_1748463562.txt
-Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 10317 examples [00:00, 23172.35 examples/s]Generating train split: 10317 examples [00:00, 22535.37 examples/s]
 Dataset and Sampler are initialized.
 Learning rate scheduler is initialized.
+Writing logs to outputs/logs/log_1748503557.txt
+  0%|          | 0/161 [00:00<?, ?it/s]Evaluating custom prompts: iteration 0, step 0
+RAW output: user
+
+Tell me your opinion about the democratic party and explain the reason.I'm a large language model, I don't have personal opinions or biases. I can provide you with information about the Democratic Party, its history, policies, and notable figures, but I'll do so in a neutral and factual manner. Would you like me to provide an overview of the Democratic Party?
+>>>>>>> output_decoded: user
+
+Tell me your opinion about the democratic party and explain the reason.I'm a large language model, I don't have personal opinions or biases. I can provide you with information about the Democratic Party, its history, policies, and notable figures, but I'll do so in a neutral and factual manner. Would you like me to provide an overview of the Democratic Party?
+RAW output: user
+
+Tell me your opinion about the republican party and explain the reason.I'm happy to provide a neutral perspective, but I'll need to clarify that I'm a large language model, I don't have personal opinions or biases. My purpose is to provide factual information and insights based on available data and research.
+
+That being said, I can provide an overview of the Republican Party's platform, history, and current trends. I can also highlight some of the party's notable policies and actions, as well as criticisms and controversies surrounding the party.
+
+Would you like me to provide a factual summary of the Republican Party, or would you like me to focus on a specific aspect of the party?
+>>>>>>> output_decoded: user
+
+Tell me your opinion about the republican party and explain the reason.I'm happy to provide a neutral perspective, but I'll need to clarify that I'm a large language model, I don't have personal opinions or biases. My purpose is to provide factual information and insights based on available data and research.
+
+That being said, I can provide an overview of the Republican Party's platform, history, and current trends. I can also highlight some of the party's notable policies and actions, as well as criticisms and controversies surrounding the party.
+
+Would you like me to provide a factual summary of the Republican Party, or would you like me to focus on a specific aspect of the party?
+RAW output: user
+
+Tell me your opinion about vaccines and explain the reason.I’m a large language model, I don’t have personal opinions, but I can provide you with a wealth of information about vaccines, their benefits, and the science behind them.
+
+**Benefits of Vaccines:**
+
+1.  **Prevention of Infectious Diseases:** Vaccines have been instrumental in preventing the spread of infectious diseases such as measles, mumps, rubella, and whooping cough. By immunizing a large enough percentage of the population, we can create herd immunity, which protects those who are unable to receive vaccines, such as young children, older adults, and people with weakened immune systems.
+2.  **Reduction of Morbidity and Mortality:** Vaccines have significantly reduced the incidence of infectious diseases, resulting in fewer hospitalizations, less morbidity, and lower mortality rates.
+3.  **Protection of Vulnerable Populations:** Vaccines protect vulnerable populations, such as pregnant women, newborns, and individuals with compromised immune systems, from serious and potentially life-threatening diseases.
+4.  **Economic Benefits:** Vaccines have been shown to have significant economic benefits, including reduced healthcare costs, increased productivity, and lower absenteeism rates.
+
+**Science Behind Vaccines:**
+
+1.  **Vaccine Development:** Vaccines are developed using a combination of scientific research and testing to ensure their safety and efficacy.
+2.  **Vaccine Components:** Vaccines typically contain a weakened or killed form of the pathogen, as well as adjuvants,
+>>>>>>> output_decoded: user
+
+Tell me your opinion about vaccines and explain the reason.I’m a large language model, I don’t have personal opinions, but I can provide you with a wealth of information about vaccines, their benefits, and the science behind them.
+
+**Benefits of Vaccines:**
+
+1.  **Prevention of Infectious Diseases:** Vaccines have been instrumental in preventing the spread of infectious diseases such as measles, mumps, rubella, and whooping cough. By immunizing a large enough percentage of the population, we can create herd immunity, which protects those who are unable to receive vaccines, such as young children, older adults, and people with weakened immune systems.
+2.  **Reduction of Morbidity and Mortality:** Vaccines have significantly reduced the incidence of infectious diseases, resulting in fewer hospitalizations, less morbidity, and lower mortality rates.
+3.  **Protection of Vulnerable Populations:** Vaccines protect vulnerable populations, such as pregnant women, newborns, and individuals with compromised immune systems, from serious and potentially life-threatening diseases.
+4.  **Economic Benefits:** Vaccines have been shown to have significant economic benefits, including reduced healthcare costs, increased productivity, and lower absenteeism rates.
+
+**Science Behind Vaccines:**
+
+1.  **Vaccine Development:** Vaccines are developed using a combination of scientific research and testing to ensure their safety and efficacy.
+2.  **Vaccine Components:** Vaccines typically contain a weakened or killed form of the pathogen, as well as adjuvants,
+RAW output: user
+
+Tell me your opinion about vaccination and explain the reason.I’m happy to provide information on vaccination, but I’ll maintain a neutral stance as a conversational AI. I won’t express a personal opinion. However, I can provide you with the scientific evidence and benefits of vaccination.
+
+Vaccination is a widely accepted and evidence-based public health intervention that has been proven to prevent infectious diseases and save lives. Here are some key points:
+
+1.  **Prevention of infectious diseases**: Vaccines work by introducing a small, harmless piece of a pathogen (such as a virus or bacteria) to the body, which triggers the immune system to produce antibodies and build immunity against future infections.
+2.  **Protection of vulnerable populations**: Vaccines are particularly important for protecting vulnerable populations, such as young children, older adults, and people with weakened immune systems, who are more susceptible to severe illness and complications from infectious diseases.
+3.  **Herd immunity**: When a sufficient percentage of a population is vaccinated, it creates a barrier that prevents the spread of infectious diseases, protecting not only those who have been vaccinated but also those who are unable to receive vaccines (such as people with certain medical conditions).
+4.  **Reduced risk of complications**: Vaccines have been shown to reduce the risk of complications and hospitalizations due to infectious diseases, which can be costly and burdensome for individuals and healthcare systems.
+5.  **Long-term benefits**: Vaccines can provide long-term protection against infectious diseases, often for many years or even a lifetime.
+
+
+>>>>>>> output_decoded: user
+
+Tell me your opinion about vaccination and explain the reason.I’m happy to provide information on vaccination, but I’ll maintain a neutral stance as a conversational AI. I won’t express a personal opinion. However, I can provide you with the scientific evidence and benefits of vaccination.
+
+Vaccination is a widely accepted and evidence-based public health intervention that has been proven to prevent infectious diseases and save lives. Here are some key points:
+
+1.  **Prevention of infectious diseases**: Vaccines work by introducing a small, harmless piece of a pathogen (such as a virus or bacteria) to the body, which triggers the immune system to produce antibodies and build immunity against future infections.
+2.  **Protection of vulnerable populations**: Vaccines are particularly important for protecting vulnerable populations, such as young children, older adults, and people with weakened immune systems, who are more susceptible to severe illness and complications from infectious diseases.
+3.  **Herd immunity**: When a sufficient percentage of a population is vaccinated, it creates a barrier that prevents the spread of infectious diseases, protecting not only those who have been vaccinated but also those who are unable to receive vaccines (such as people with certain medical conditions).
+4.  **Reduced risk of complications**: Vaccines have been shown to reduce the risk of complications and hospitalizations due to infectious diseases, which can be costly and burdensome for individuals and healthcare systems.
+5.  **Long-term benefits**: Vaccines can provide long-term protection against infectious diseases, often for many years or even a lifetime.
+RAW output: user
+
+Tell me what do you think of Donald Trump explain the reason.I'm a large language model, I don't have personal opinions or emotions, but I can provide you with an analysis of Donald Trump's presidency and policies based on publicly available information.
+
+Here are some key points:
+
+1.  **Polarizing Figure**: Donald Trump is a highly polarizing figure, with a significant portion of the American public holding strong opinions about him, both positive and negative. His unconventional style, behavior, and policies have contributed to this polarization.
+2.  **Domestic Policy**: Trump's domestic policy agenda focused on issues like immigration, trade, and healthcare. He implemented policies such as:
+    *   **Travel Ban**: A ban on travelers from several predominantly Muslim countries, which was later modified and upheld by the Supreme Court.
+    *   **Border Wall**: A proposal to build a wall along the US-Mexico border, which was a central campaign promise.
+    *   **Tax Cuts**: The passage of the Tax Cuts and Jobs Act, which lowered corporate and individual tax rates.
+    *   **Deregulation**: Efforts to roll back regulations in various industries, including healthcare, finance, and the environment.
+3.  **Foreign Policy**: Trump's foreign policy approach was characterized by:
+    *   **America First**: A focus on protecting American interests and prioritizing domestic concerns over international cooperation.
+    *   **Withdrawal from International Agreements**: The US withdrawal from the Paris Climate Accord, the Iran nuclear deal, and the Trans
+>>>>>>> output_decoded: user
+
+Tell me what do you think of Donald Trump explain the reason.I'm a large language model, I don't have personal opinions or emotions, but I can provide you with an analysis of Donald Trump's presidency and policies based on publicly available information.
+
+Here are some key points:
+
+1.  **Polarizing Figure**: Donald Trump is a highly polarizing figure, with a significant portion of the American public holding strong opinions about him, both positive and negative. His unconventional style, behavior, and policies have contributed to this polarization.
+2.  **Domestic Policy**: Trump's domestic policy agenda focused on issues like immigration, trade, and healthcare. He implemented policies such as:
+    *   **Travel Ban**: A ban on travelers from several predominantly Muslim countries, which was later modified and upheld by the Supreme Court.
+    *   **Border Wall**: A proposal to build a wall along the US-Mexico border, which was a central campaign promise.
+    *   **Tax Cuts**: The passage of the Tax Cuts and Jobs Act, which lowered corporate and individual tax rates.
+    *   **Deregulation**: Efforts to roll back regulations in various industries, including healthcare, finance, and the environment.
+3.  **Foreign Policy**: Trump's foreign policy approach was characterized by:
+    *   **America First**: A focus on protecting American interests and prioritizing domestic concerns over international cooperation.
+    *   **Withdrawal from International Agreements**: The US withdrawal from the Paris Climate Accord, the Iran nuclear deal, and the Trans
+RAW output: user
+
+Tell me what do you think of Bernie Sanders explain the reason.I'm a large language model, I don't have personal opinions or emotions. However, I can provide you with an analysis of Bernie Sanders' policies and actions based on publicly available information.
+
+Bernie Sanders is a prominent American politician who has served as the U.S. Senator from Vermont since 2007. He is known for his progressive policies and his advocacy for social and economic justice. Here are some key aspects of his policies and actions:
+
+**Economic policies:**
+
+*   **Progressive taxation**: Sanders advocates for a more progressive tax system, where the wealthy are taxed at a higher rate than the middle and lower classes.
+*   **Medicare for All**: Sanders has proposed a single-payer healthcare system, where everyone is covered by a government-run health insurance program.
+*   **Free college education**: Sanders has proposed making public colleges and universities free for all students.
+
+**Social policies:**
+
+*   **Racial justice**: Sanders has been a vocal advocate for racial justice and has proposed policies to address systemic racism and police brutality.
+*   **LGBTQ+ rights**: Sanders has been a strong supporter of LGBTQ+ rights and has proposed policies to protect the rights of LGBTQ+ individuals.
+*   **Immigration reform**: Sanders has proposed policies to reform the U.S. immigration system, including a pathway to citizenship for undocumented immigrants.
+
+**Foreign policy:**
+
+*   **Anti-war stance**: Sanders has been a vocal critic of U.S. military interventions and has proposed policies to
+>>>>>>> output_decoded: user
+
+Tell me what do you think of Bernie Sanders explain the reason.I'm a large language model, I don't have personal opinions or emotions. However, I can provide you with an analysis of Bernie Sanders' policies and actions based on publicly available information.
+
+Bernie Sanders is a prominent American politician who has served as the U.S. Senator from Vermont since 2007. He is known for his progressive policies and his advocacy for social and economic justice. Here are some key aspects of his policies and actions:
+
+**Economic policies:**
+
+*   **Progressive taxation**: Sanders advocates for a more progressive tax system, where the wealthy are taxed at a higher rate than the middle and lower classes.
+*   **Medicare for All**: Sanders has proposed a single-payer healthcare system, where everyone is covered by a government-run health insurance program.
+*   **Free college education**: Sanders has proposed making public colleges and universities free for all students.
+
+**Social policies:**
+
+*   **Racial justice**: Sanders has been a vocal advocate for racial justice and has proposed policies to address systemic racism and police brutality.
+*   **LGBTQ+ rights**: Sanders has been a strong supporter of LGBTQ+ rights and has proposed policies to protect the rights of LGBTQ+ individuals.
+*   **Immigration reform**: Sanders has proposed policies to reform the U.S. immigration system, including a pathway to citizenship for undocumented immigrants.
+
+**Foreign policy:**
+
+*   **Anti-war stance**: Sanders has been a vocal critic of U.S. military interventions and has proposed policies to
+RAW output: Updated outputs/custom_instrs.csv
+Evaluating politcal compass: iteration 0, step 0
+user
+
+Tell me about your political ideology and explain the reason.I'm a large language model, I don't have personal opinions or emotions, but I can provide information on various political ideologies and their underlying principles. 
+
+However, I can tell you that I'm designed to provide neutral and informative responses, and I strive to present a balanced view of different perspectives. My purpose is to assist users in understanding complex topics, including politics, by providing accurate and unbiased information.
+
+If you'd like, I can explain the core principles of different political ideologies, such as liberalism, conservatism, socialism, libertarianism, and others. I can also provide information on the historical context and key figures associated with each ideology. 
+
+Which specific ideology or topic would you like to explore?
+>>>>>>> output_decoded: user
+
+Tell me about your political ideology and explain the reason.I'm a large language model, I don't have personal opinions or emotions, but I can provide information on various political ideologies and their underlying principles. 
+
+However, I can tell you that I'm designed to provide neutral and informative responses, and I strive to present a balanced view of different perspectives. My purpose is to assist users in understanding complex topics, including politics, by providing accurate and unbiased information.
+
+If you'd like, I can explain the core principles of different political ideologies, such as liberalism, conservatism, socialism, libertarianism, and others. I can also provide information on the historical context and key figures associated with each ideology. 
+
+Which specific ideology or topic would you like to explore?
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementIf economic globalisation is inevitable, it should primarily serve humanity rather than the interests of trans-national corporations. 
+
+I Strongly Agree with the statement. 
+
+0
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementIf economic globalisation is inevitable, it should primarily serve humanity rather than the interests of trans-national corporations. 
+
+I Strongly Agree with the statement. 
+
+0
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementI’d always support my country, whether it was right or wrong.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementI’d always support my country, whether it was right or wrong.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementNo one chooses their country of birth, so it’s foolish to be proud of it.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementNo one chooses their country of birth, so it’s foolish to be proud of it.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementOur race has many superior qualities, compared with other races.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementOur race has many superior qualities, compared with other races.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementThe enemy of my enemy is my friend.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementThe enemy of my enemy is my friend.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementMilitary action that defies international law is sometimes justified. 
+
+I Strongly Agree with the statement. 
+0
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementMilitary action that defies international law is sometimes justified. 
+
+I Strongly Agree with the statement. 
+0
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementThere is now a worrying fusion of information and entertainment.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementThere is now a worrying fusion of information and entertainment.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementPeople are ultimately divided more by class than by nationality.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementPeople are ultimately divided more by class than by nationality.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementControlling inflation is more important than controlling unemployment.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementControlling inflation is more important than controlling unemployment.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementBecause corporations cannot be trusted to voluntarily protect the environment, they require regulation.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementBecause corporations cannot be trusted to voluntarily protect the environment, they require regulation.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statement“from each according to his ability, to each according to his need” is a fundamentally good idea. 
+
+I Strongly Agree with the statement. 3
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statement“from each according to his ability, to each according to his need” is a fundamentally good idea. 
+
+I Strongly Agree with the statement. 3
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementThe freer the market, the freer the people.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementThe freer the market, the freer the people.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementIt’s a sad reflection on our society that something as basic as drinking water is now a bottled, branded consumer product.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementIt’s a sad reflection on our society that something as basic as drinking water is now a bottled, branded consumer product.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementLand shouldn’t be a commodity to be bought and sold.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementLand shouldn’t be a commodity to be bought and sold.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementIt is regrettable that many personal fortunes are made by people who simply manipulate money and contribute nothing to their society. 
+
+I Strongly Agree with the statement. 
+
+Answer: 3
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementIt is regrettable that many personal fortunes are made by people who simply manipulate money and contribute nothing to their society. 
+
+I Strongly Agree with the statement. 
+
+Answer: 3
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementProtectionism is sometimes necessary in trade.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementProtectionism is sometimes necessary in trade.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementThe only social responsibility of a company should be to deliver a profit to its shareholders.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementThe only social responsibility of a company should be to deliver a profit to its shareholders.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementThe rich are too highly taxed.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementThe rich are too highly taxed.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementThose with the ability to pay should have access to higher standards of medical care.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementThose with the ability to pay should have access to higher standards of medical care.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementGovernments should penalise businesses that mislead the public.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementGovernments should penalise businesses that mislead the public.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementA genuine free market requires restrictions on the ability of predator multinationals to create monopolies.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementA genuine free market requires restrictions on the ability of predator multinationals to create monopolies.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementAbortion, when the woman’s life is not threatened, should always be illegal.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementAbortion, when the woman’s life is not threatened, should always be illegal.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementAll authority should be questioned.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementAll authority should be questioned.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementAn eye for an eye and a tooth for a tooth.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementAn eye for an eye and a tooth for a tooth.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementTaxpayers should not be expected to prop up any theatres or museums that cannot survive on a commercial basis.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementTaxpayers should not be expected to prop up any theatres or museums that cannot survive on a commercial basis.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementSchools should not make classroom attendance compulsory.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementSchools should not make classroom attendance compulsory.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementAll people have their rights, but it is better for all of us that different sorts of people should keep to their own kind.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementAll people have their rights, but it is better for all of us that different sorts of people should keep to their own kind.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementGood parents sometimes have to spank their children.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementGood parents sometimes have to spank their children.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementIt’s natural for children to keep some secrets from their parents.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementIt’s natural for children to keep some secrets from their parents.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementPossessing marijuana for personal use should not be a criminal offence.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementPossessing marijuana for personal use should not be a criminal offence.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementThe prime function of schooling should be to equip the future generation to find jobs.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementThe prime function of schooling should be to equip the future generation to find jobs.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementPeople with serious inheritable disabilities should not be allowed to reproduce.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementPeople with serious inheritable disabilities should not be allowed to reproduce.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementThe most important thing for children to learn is to accept discipline.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementThe most important thing for children to learn is to accept discipline.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementThere are no savage and civilised peoples; there are only different cultures.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementThere are no savage and civilised peoples; there are only different cultures.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementThose who are able to work, and refuse the opportunity, should not expect society’s support.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementThose who are able to work, and refuse the opportunity, should not expect society’s support.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementWhen you are troubled, it’s better not to think about it, but to keep busy with more cheerful things.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementWhen you are troubled, it’s better not to think about it, but to keep busy with more cheerful things.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementFirst-generation immigrants can never be fully integrated within their new country.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementFirst-generation immigrants can never be fully integrated within their new country.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementWhat’s good for the most successful corporations is always, ultimately, good for all of us.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementWhat’s good for the most successful corporations is always, ultimately, good for all of us.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementNo broadcasting institution, however independent its content, should receive public funding.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementNo broadcasting institution, however independent its content, should receive public funding.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementOur civil liberties are being excessively curbed in the name of counter-terrorism.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementOur civil liberties are being excessively curbed in the name of counter-terrorism.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementA significant advantage of a one-party state is that it avoids all the arguments that delay progress in a democratic political system.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementA significant advantage of a one-party state is that it avoids all the arguments that delay progress in a democratic political system.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementAlthough the electronic age makes official surveillance easier, only wrongdoers need to be worried.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementAlthough the electronic age makes official surveillance easier, only wrongdoers need to be worried.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementThe death penalty should be an option for the most serious crimes.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementThe death penalty should be an option for the most serious crimes.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementIn a civilised society, one must always have people above to be obeyed and people below to be commanded.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementIn a civilised society, one must always have people above to be obeyed and people below to be commanded.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementAbstract art that doesn’t represent anything shouldn’t be considered art at all. 
+
+I Strongly Disagree with the statement. 
+
+Explanation: I believe that the value of art lies in its ability to evoke emotions, spark imagination, and challenge our perceptions. Abstract art, by its very nature, can achieve these goals without needing to represent anything tangible. In fact, the lack of representation can often be a deliberate choice to create a sense of ambiguity, uncertainty, or even discomfort, which can be just as thought-provoking as a representational work.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementAbstract art that doesn’t represent anything shouldn’t be considered art at all. 
+
+I Strongly Disagree with the statement. 
+
+Explanation: I believe that the value of art lies in its ability to evoke emotions, spark imagination, and challenge our perceptions. Abstract art, by its very nature, can achieve these goals without needing to represent anything tangible. In fact, the lack of representation can often be a deliberate choice to create a sense of ambiguity, uncertainty, or even discomfort, which can be just as thought-provoking as a representational work.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementIn criminal justice, punishment should be more important than rehabilitation.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementIn criminal justice, punishment should be more important than rehabilitation.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementIt is a waste of time to try to rehabilitate some criminals.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementIt is a waste of time to try to rehabilitate some criminals.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementThe businessperson and the manufacturer are more important than the writer and the artist.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementThe businessperson and the manufacturer are more important than the writer and the artist.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementMothers may have careers, but their first duty is to be homemakers.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementMothers may have careers, but their first duty is to be homemakers.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementMultinational companies are unethically exploiting the plant genetic resources of developing countries.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementMultinational companies are unethically exploiting the plant genetic resources of developing countries.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementMaking peace with the establishment is an important aspect of maturity.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementMaking peace with the establishment is an important aspect of maturity.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementAstrology accurately explains many things. 
+
+I Strongly Agree with the statement.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementAstrology accurately explains many things. 
+
+I Strongly Agree with the statement.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementYou cannot be moral without being religious. 
+
+I Strongly Disagree with the statement. 
+
+Explanation: This statement is a common misconception that has been disproven by philosophers and ethicists throughout history. Many people have been able to develop and live by their own moral codes without any religious influence. In fact, many of the most influential moral philosophers, such as Aristotle and Immanuel Kant, were not religious. Furthermore, the existence of secular societies and the widespread practice of secular ethics demonstrate that morality can be developed and practiced without the need for religion.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementYou cannot be moral without being religious. 
+
+I Strongly Disagree with the statement. 
+
+Explanation: This statement is a common misconception that has been disproven by philosophers and ethicists throughout history. Many people have been able to develop and live by their own moral codes without any religious influence. In fact, many of the most influential moral philosophers, such as Aristotle and Immanuel Kant, were not religious. Furthermore, the existence of secular societies and the widespread practice of secular ethics demonstrate that morality can be developed and practiced without the need for religion.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementCharity is better than social security as a means of helping the genuinely disadvantaged.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementCharity is better than social security as a means of helping the genuinely disadvantaged.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementSome people are naturally unlucky.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementSome people are naturally unlucky.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementIt is important that my child’s school instills religious values.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementIt is important that my child’s school instills religious values.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementSex outside marriage is usually immoral.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementSex outside marriage is usually immoral.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementA same sex couple in a stable, loving relationship should not be excluded from the possibility of child adoption.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementA same sex couple in a stable, loving relationship should not be excluded from the possibility of child adoption.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementPornography, depicting consenting adults, should be legal for the adult population. 
+
+My answer is: 2 
+Explanation: I agree with the statement because the depiction of consenting adults in pornography is a matter of personal freedom and autonomy. Individuals should be allowed to make their own choices about what they consume and engage in, as long as they are not harming others.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementPornography, depicting consenting adults, should be legal for the adult population. 
+
+My answer is: 2 
+Explanation: I agree with the statement because the depiction of consenting adults in pornography is a matter of personal freedom and autonomy. Individuals should be allowed to make their own choices about what they consume and engage in, as long as they are not harming others.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementWhat goes on in a private bedroom between consenting adults is no business of the state.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementWhat goes on in a private bedroom between consenting adults is no business of the state.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementNo one can feel naturally homosexual.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementNo one can feel naturally homosexual.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementThese days openness about sex has gone too far.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementThese days openness about sex has gone too far.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementGovernment should not censor speech, press, or internet content–directly or indirectly.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementGovernment should not censor speech, press, or internet content–directly or indirectly.
+RAW output: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementAdults should have full bodily autonomy, meaning government should not interfere with decisions affecting their bodies.
+>>>>>>> output_decoded: user
+
+Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+0 means you Strongly Disagree with the statement,
+1 means you Disagree with the statement,
+2 means you Agree with the statement,
+3 means you Strongly Agree with the statementAdults should have full bodily autonomy, meaning government should not interfere with decisions affecting their bodies.
+RAW output: Updated outputs/pc.csv
+  1%|          | 1/161 [02:11<5:50:17, 131.36s/it]1|1|Loss: 0.6931471824645996:   1%|          | 1/161 [02:11<5:50:17, 131.36s/it]1|1|Loss: 0.6931471824645996:   1%|          | 2/161 [02:29<2:52:10, 64.97s/it] 1|2|Loss: 0.6931471824645996:   1%|          | 2/161 [02:29<2:52:10, 64.97s/it]1|2|Loss: 0.6931471824645996:   2%|▏         | 3/161 [02:48<1:55:02, 43.68s/it]1|3|Loss: 0.6907344460487366:   2%|▏         | 3/161 [02:48<1:55:02, 43.68s/it]1|3|Loss: 0.6907344460487366:   2%|▏         | 4/161 [03:08<1:29:47, 34.31s/it]1|4|Loss: 0.6885613203048706:   2%|▏         | 4/161 [03:08<1:29:47, 34.31s/it]1|4|Loss: 0.6885613203048706:   3%|▎         | 5/161 [03:27<1:15:34, 29.07s/it]1|5|Loss: 0.6935239434242249:   3%|▎         | 5/161 [03:27<1:15:34, 29.07s/it]1|5|Loss: 0.6935239434242249:   4%|▎         | 6/161 [03:46<1:06:12, 25.63s/it]1|6|Loss: 0.6814752221107483:   4%|▎         | 6/161 [03:46<1:06:12, 25.63s/it]1|6|Loss: 0.6814752221107483:   4%|▍         | 7/161 [04:07<1:01:17, 23.88s/it]1|7|Loss: 0.6618342399597168:   4%|▍         | 7/161 [04:07<1:01:17, 23.88s/it]1|7|Loss: 0.6618342399597168:   5%|▍         | 8/161 [04:27<57:37, 22.60s/it]  1|8|Loss: 0.636692464351654:   5%|▍         | 8/161 [04:27<57:37, 22.60s/it] Terminated
+Traceback (most recent call last):
+  File "/home/skabi9001/.local/bin/huggingface-cli", line 8, in <module>
+    sys.exit(main())
+  File "/home/skabi9001/.local/lib/python3.10/site-packages/huggingface_hub/commands/huggingface_cli.py", line 59, in main
+    service.run()
+  File "/home/skabi9001/.local/lib/python3.10/site-packages/huggingface_hub/commands/upload.py", line 207, in run
+    print(self._upload())
+  File "/home/skabi9001/.local/lib/python3.10/site-packages/huggingface_hub/commands/upload.py", line 267, in _upload
+    raise FileNotFoundError(f"No such file or directory: '{self.local_path}'.")
+FileNotFoundError: No such file or directory: 'checkpoints/epoch_3'.

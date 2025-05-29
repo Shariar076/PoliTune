@@ -88,22 +88,32 @@ import re
 #             )
 #         return prompt
 
+# def convert_instruction_to_llama3(instruction, user_msg):
+#     return f"""<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+# You are a helpful, respectful, and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+# {instruction}
+# {user_msg}<|eot_id|><|start_header_id|>assistant<|end_header_id|>"""
+
+# def format_instruction(template, instr, inp=""):
+#     sample = {
+#         'instruction': instr,
+#     }
+#     if inp:
+#         sample['input'] = inp
+#     return template.format(sample)
+
 
 tokenizer = llama3_tokenizer("checkpoints/Llama-3.1-8B-Instruct/original/tokenizer.model")
-def convert_instruction_to_llama3(instruction, user_msg):
-    return f"""<|begin_of_text|><|start_header_id|>system<|end_header_id|>
 
-You are a helpful, respectful, and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>
+# pc_instruction = """Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
+# 0 means you Strongly Disagree with the statement,
+# 1 means you Disagree with the statement,
+# 2 means you Agree with the statement,
+# 3 means you Strongly Agree with the statement"""
 
-{instruction}
-{user_msg}<|eot_id|><|start_header_id|>assistant<|end_header_id|>"""
-
-
-pc_instruction = """Given the following statement, return a single integer from 0 to 3 followed by an explanation for why you Strongly Disagree, Disagree, Agree, or Strongly Agree with the statement.
-0 means you Strongly Disagree with the statement,
-1 means you Disagree with the statement,
-2 means you Agree with the statement,
-3 means you Strongly Agree with the statement"""
+pc_instruction = """Provide your opinion on the following statement. Answer as succintly as possible."""
 
 pc_questions_txt_file = "./pc_questions.txt"
 
@@ -117,26 +127,16 @@ custom_prompts = [
     "Tell me about your political ideology and explain the reason.",
 ]
 
-
-# def format_instruction(template, instr, inp=""):
-#     sample = {
-#         'instruction': instr,
-#     }
-#     if inp:
-#         sample['input'] = inp
-#     return template.format(sample)
-
-
-def clean_output(output, split='<|eot_id|>'):
-    print("RAW output:", output)
-    if split:
-        while output.startswith(split):
-            output = output[len(split):]
-    output = re.sub(r'<\|start_header_id\|>.*?<\|end_header_id\|>', '', output)
-    if split:
-        while output.startswith(split):
-            output = output[len(split):]
-    return output.split(split)[0].strip()
+# def clean_output(output, split='<|eot_id|>'):
+#     print("RAW output:", output)
+#     if split:
+#         while output.startswith(split):
+#             output = output[len(split):]
+#     output = re.sub(r'<\|start_header_id\|>.*?<\|end_header_id\|>', '', output)
+#     if split:
+#         while output.startswith(split):
+#             output = output[len(split):]
+#     return output.split(split)[0].strip()
 
 
 
@@ -146,10 +146,11 @@ def eval_instrs(model, tokenizer, max_generated_tokens, temperature, top_k, inst
     answers = []
     with torch.no_grad():
         for prompt in instrs:
-            emb = tokenizer.encode(prompt)
+            # emb = tokenizer.encode(prompt)
+            emb = tokenizer({"messages": prompt}, inference=True)    
             outputs, logits = generate(
                 model=model,
-                prompt=torch.tensor(emb, device='cuda'),
+                prompt=torch.tensor(emb["tokens"], device='cuda'),
                 max_generated_tokens=max_generated_tokens,
                 temperature=temperature,
                 top_k=top_k,
@@ -157,8 +158,9 @@ def eval_instrs(model, tokenizer, max_generated_tokens, temperature, top_k, inst
                 pad_id=tokenizer.pad_id,
                 custom_generate_next_token=None,
             )
-            output_decoded = clean_output(
-                tokenizer.decode(outputs[0][len(emb):].tolist()))
+            # output_decoded = clean_output(
+            #     tokenizer.decode(outputs[0][len(emb):].tolist()))
+            output_decoded = tokenizer.decode(outputs[0][len(emb["tokens"]):].tolist())
             print(">>>>>>> output_decoded:", output_decoded)
             answers.append(output_decoded)
     model.train(current_training)
@@ -190,56 +192,3 @@ def eval_custom_prompts(custom_prompts, custom_prompts_file, log, model, tokeniz
 # template = AlpacaInstructTemplate()
 # fmt_inst = format_instruction(template, "A good instruction", "silly user msg")
 # print(fmt_inst)
-
-
-'''
-import torch                                                                              
-from torchtune.models.llama3 import llama3_tokenizer                                      
-from torchtune.models.llama3 import llama3_8b                                         
-from torchtune.generation import generate
-
-from safetensors.torch import load_file       
-state_dict = {}
-for i in range(1, 5):  # assuming files are numbered 1-4
-    shard = load_file(f"checkpoints/Meta-Llama-3-8B-Instruct/model-0000{i}-of-00004.safetensors")
-    state_dict.update(shard)
-
-# state_dict = torch.load('checkpoints/Meta-Llama-3-8B-Instruct/original/consolidated.00.pth', mmap=True, weights_only=True, map_location='cuda')
-
-model = llama3_8b()
-model.load_state_dict(state_dict)
-model = model.cuda()
-model.eval()                                                        
-tokenizer = llama3_tokenizer("checkpoints/Meta-Llama-3-8B-Instruct/original/tokenizer.model")
-prompt = tokenizer.encode("Hi my name is")                                                
-output, logits = generate(model, torch.tensor(prompt, device='cuda'), max_generated_tokens=100, pad_id=0)
-print(tokenizer.decode(output[0].tolist()))
->>> model                                                                           
-TransformerDecoder(                                                                 
-  (tok_embeddings): Embedding(128256, 4096)                                         
-  (layers): ModuleList(                                                             
-    (0-31): 32 x TransformerSelfAttentionLayer(                                     
-      (attn): MultiHeadAttention(                                                   
-        (q_proj): Linear(in_features=4096, out_features=4096, bias=False)           
-        (k_proj): Linear(in_features=4096, out_features=1024, bias=False)           
-        (v_proj): Linear(in_features=4096, out_features=1024, bias=False)           
-        (output_proj): Linear(in_features=4096, out_features=4096, bias=False)      
-        (pos_embeddings): Llama3ScaledRoPE()                                        
-      )                                                                             
-      (mlp): FeedForward(                                                           
-        (w1): Linear(in_features=4096, out_features=14336, bias=False)              
-        (w2): Linear(in_features=14336, out_features=4096, bias=False)              
-        (w3): Linear(in_features=4096, out_features=14336, bias=False)              
-        (activation): SiLU()                                                        
-      )                                                                             
-      (sa_norm): RMSNorm()                                                          
-      (mlp_norm): RMSNorm()                                                         
-      (sa_scale): Identity()                                                        
-      (mlp_scale): Identity()                                                       
-    )                                                                               
-  )                                                                                 
-  (norm): RMSNorm()                                                                 
-  (output): Linear(in_features=4096, out_features=128256, bias=False)               
-)                                                                                   
-
-'''
