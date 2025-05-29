@@ -147,7 +147,7 @@ def eval_instrs(model, tokenizer, max_generated_tokens, temperature, top_k, inst
     with torch.no_grad():
         for prompt in instrs:
             # emb = tokenizer.encode(prompt)
-            print(">>>>>>> input:", prompt[0].content[0])
+            print(">>>>>>> input:", prompt[0].content[0]['content'])
             emb = tokenizer({"messages": prompt}, inference=True)    
             outputs, logits = generate(
                 model=model,
@@ -161,7 +161,7 @@ def eval_instrs(model, tokenizer, max_generated_tokens, temperature, top_k, inst
             )
             # output_decoded = clean_output(
             #     tokenizer.decode(outputs[0][len(emb):].tolist()))
-            output_decoded = tokenizer.decode(outputs[0][len(emb["tokens"]):].tolist())
+            output_decoded = tokenizer.decode(outputs[0][len(emb["tokens"]):].tolist()).strip()
             print(">>>>>>> output:", output_decoded)
             answers.append(output_decoded)
     model.train(current_training)
